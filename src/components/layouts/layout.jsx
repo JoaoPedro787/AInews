@@ -13,7 +13,7 @@ const Layout = () => {
   return (
     <>
       {/* Apenas um container */}
-      <div className="flex flex-col min-h-screen overflow-hidden">
+      <div className="flex flex-col min-h-screen overflow-hidden min-w-[360px]">
         {<Header modalFunc={ModalFunc} />}
 
         {/* Container para o modal sobrepor */}
@@ -22,7 +22,7 @@ const Layout = () => {
           <HeaderModal isOpen={isOpen} />
 
           {/* Cresce independente do conteudo*/}
-          <main className="p-layout grow [&>*]:max-w-[1280px] [&>*]:m-auto z-0">
+          <main className="px-layout py-10 grow [&>*]:max-w-[1280px] [&>*]:m-auto z-0 bg-layout-secondary">
             {<Outlet />}
           </main>
 

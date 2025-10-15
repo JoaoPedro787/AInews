@@ -9,7 +9,7 @@ const LogoUi = ({ size }) => {
         {<GiArtificialHive />}
       </figure>
       <h1 className={`font-bold ${size === "slim" ? "text-3xl" : "text-5xl"}`}>
-        IA <span className="text-primary">News</span>
+        AI <span className="text-primary">News</span>
       </h1>
     </div>
   );

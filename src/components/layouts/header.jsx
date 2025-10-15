@@ -9,8 +9,10 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 const Links = [
   { id: "News", link: "#" },
+  { id: "Technology", link: "#" },
+  { id: "US", link: "#" },
+  { id: "World", link: "#" },
   { id: "Games", link: "#" },
-  { id: "Video", link: "#" },
   { id: "Music", link: "#" },
 ];
 
@@ -22,7 +24,7 @@ const Links = [
 
 const NavC = () => {
   return (
-    <div className="flex items-center grow text-xl font-bold max-[801px]:hidden">
+    <div className="flex items-center grow text-lg font-bold max-[801px]:hidden">
       <nav className="flex flex-1 list-none justify-evenly">
         {Links.map((el, i) => (
           <li key={i}>
@@ -37,7 +39,7 @@ const NavC = () => {
 const SearchC = ({ modalFunc }) => {
   return (
     <div
-      className="flex justify-center items-center text-3xl cursor-pointer max-[801px]:hidden"
+      className="flex justify-center items-center text-xl cursor-pointer max-[801px]:hidden"
       onClick={modalFunc}
     >
       {<FaSearch />}
@@ -53,7 +55,7 @@ const Header = ({ modalFunc }) => {
   return (
     <div className="relative">
       {/* Main Container */}
-      <header className="relative z-50 bg-white p-layout">
+      <header className="relative z-50 bg-layout-primary p-layout">
         <section className="m-auto flex justify-between max-w-[1280px]">
           {/* Container for Logo */}
           {<LogoUi size={"slim"} />}
