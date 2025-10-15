@@ -1,0 +1,36 @@
+import { useState } from "react";
+
+import { Outlet } from "react-router-dom";
+import Header from "./header";
+import Footer from "./footer";
+import HeaderModal from "./header-modal";
+
+const Layout = () => {
+  const [isOpen, SetModal] = useState(false);
+
+  const ModalFunc = () => SetModal(!isOpen);
+
+  return (
+    <>
+      {/* Apenas um container */}
+      <div className="flex flex-col min-h-screen overflow-hidden">
+        {<Header modalFunc={ModalFunc} />}
+
+        {/* Container para o modal sobrepor */}
+        <div className="relative flex flex-col grow">
+          {/* Modal da header sobrepõe o Outlet e o Footer */}
+          <HeaderModal isOpen={isOpen} />
+
+          {/* Cresce independente do conteudo*/}
+          <main className="p-layout grow [&>*]:max-w-[1280px] [&>*]:m-auto z-0">
+            {<Outlet />}
+          </main>
+
+          {<Footer />}
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default Layout;

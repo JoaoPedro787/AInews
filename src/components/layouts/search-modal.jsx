@@ -1,0 +1,26 @@
+const SearchModal = ({ isOpen }) => {
+  return (
+    <div
+      className={`p-layout border-t-1 left-0 right-0 border-gray-300 absolute w-full -translate-y-full z-40 bg-gray-100 transition-all duration-100 max-[800px]:-translate-y-full ${
+        isOpen ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <section className="flex flex-col gap-4 max-w-[1280px] m-auto">
+        <h2 className="text-3xl font-bold border-b-1 pb-3 border-gray-300">
+          Search
+        </h2>
+        <div className="flex justify-between gap-4">
+          <input
+            placeholder="Search Stories"
+            className="border-1 border-gray-300 rounded-md grow outline-0 p-3 text-xl"
+          />
+          <button className="px-4 py-2 bg-black text-white font-bold text-xl rounded-md">
+            Search
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default SearchModal;
