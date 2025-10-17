@@ -7,17 +7,17 @@ const NewsTemplate2 = () => {
         <h2 className="text-3xl font-semibold">For you</h2>
         <h3 className="font-semibold">Recommended based on your interests</h3>
       </article>
-      <div className="flex shadow-md rounded-md gap-6 p-layout bg-layout-primary">
+      <div className="flex shadow-md rounded-md gap-6 p-layout bg-layout-primary max-[1281px]:flex-col">
         <section className="flex-1 flex flex-col gap-4">
-          <NoticeCard />
-          <NoticeCard />
-          <NoticeCard />
+          <NoticeCard size={"small"} />
+          <NoticeCard size={"small"} />
+          <NoticeCard size={"small"} />
         </section>
         <span className="border-1 border-gray-500" />
         <section className="flex-1 flex flex-col gap-4">
-          <NoticeCard />
-          <NoticeCard />
-          <NoticeCard />
+          <NoticeCard size={"small"} />
+          <NoticeCard size={"small"} />
+          <NoticeCard size={"small"} />
         </section>
       </div>
     </section>

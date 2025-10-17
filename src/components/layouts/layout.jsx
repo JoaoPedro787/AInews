@@ -12,8 +12,15 @@ const Layout = () => {
 
   return (
     <>
-      {/* Apenas um container */}
-      <div className="flex flex-col min-h-screen overflow-hidden min-w-[360px]">
+      {/* Container principal
+          IsOpen controla o height do container, 
+          fazendo o modal ocupar a pagina inteira.
+      */}
+      <div
+        className={`flex flex-col min-h-screen overflow-hidden min-w-[360px] ${
+          isOpen && "max-h-screen"
+        }`}
+      >
         {<Header modalFunc={ModalFunc} />}
 
         {/* Container para o modal sobrepor */}

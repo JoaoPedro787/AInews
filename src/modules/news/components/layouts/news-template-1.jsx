@@ -3,10 +3,10 @@ import NoticeCard from "../ui/notice-card";
 
 const TopNotice = () => {
   return (
-    <div className="flex flex-col flex-1 rounded-md shadow-md cursor-pointer bg-layout-primary">
-      <figure className="min-w-full">
+    <div className="flex flex-col flex-1 rounded-md shadow-md cursor-pointer bg-layout-primary hover:[&>figure>img]:scale-120 hover:[&>figure>img]:blur-[2px] ">
+      <figure className="min-w-full overflow-hidden">
         <img
-          className="w-full h-full bg-contain"
+          className="w-full h-full bg-contain transition-all"
           src="https://storage.morningbrew.com/image/2025-10-14/image-fa7f9fabf7e9ed51f04d351203ea701fd7d7f459-1500x1000-jpg/MBD-Instagram-PG13-1025.webp"
         />
       </figure>
@@ -32,9 +32,9 @@ const NewsTemplate1 = () => {
       <div className="flex flex-col flex-1 gap-4 bg-layout-primary shadow-md rounded-md p-layout">
         <div className="flex justify-between items-center">
           <h2 className="text-3xl font-bold text-primary">The Latest</h2>
-          <span className="text-lg flex gap-1 items-center cursor-pointer">
+          <span className="text-md flex gap-1 items-center cursor-pointer transition-all hover:text-primary hover:[&>figure]:translate-x-1">
             <h3 className="font-bold">ALL STORIES</h3>
-            <figure>
+            <figure className="transition-all">
               <LuArrowRight />
             </figure>
           </span>

@@ -10,7 +10,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 const Links = [
   { id: "News", link: "#" },
   { id: "Technology", link: "#" },
-  { id: "US", link: "#" },
+  { id: "U.S.", link: "#" },
   { id: "World", link: "#" },
   { id: "Games", link: "#" },
   { id: "Music", link: "#" },
@@ -27,7 +27,7 @@ const NavC = () => {
     <div className="flex items-center grow text-lg font-bold max-[801px]:hidden">
       <nav className="flex flex-1 list-none justify-evenly">
         {Links.map((el, i) => (
-          <li key={i}>
+          <li key={i} className="transition-all hover:text-primary">
             <Link to={el.link}>{el.id}</Link>
           </li>
         ))}
@@ -38,12 +38,12 @@ const NavC = () => {
 
 const SearchC = ({ modalFunc }) => {
   return (
-    <div
-      className="flex justify-center items-center text-xl cursor-pointer max-[801px]:hidden"
+    <button
+      className="flex justify-center items-center text-xl cursor-pointer max-[801px]:hidden transition-all hover:text-primary hover:scale-120"
       onClick={modalFunc}
     >
       {<FaSearch />}
-    </div>
+    </button>
   );
 };
 
@@ -65,12 +65,12 @@ const Header = ({ modalFunc }) => {
           {<SearchC modalFunc={ModalFunc} />}
 
           {/* Only appear when min-w is equal to 801px */}
-          <figure
-            className="min-[801px]:hidden flex items-center text-3xl cursor-pointer"
+          <button
+            className="min-[801px]:hidden flex items-center text-3xl cursor-pointer transition all hover:text-primary"
             onClick={modalFunc}
           >
             <GiHamburgerMenu />
-          </figure>
+          </button>
         </section>
       </header>
 

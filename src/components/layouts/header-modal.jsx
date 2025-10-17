@@ -5,8 +5,10 @@ import { LuArrowRight } from "react-icons/lu";
 
 const Links = [
   { id: "News", link: "#" },
+  { id: "Technology", link: "#" },
+  { id: "U.S.", link: "#" },
+  { id: "World", link: "#" },
   { id: "Games", link: "#" },
-  { id: "Video", link: "#" },
   { id: "Music", link: "#" },
 ];
 
@@ -28,7 +30,10 @@ const HeaderModal = ({ isOpen }) => {
       </div>
       <nav className="flex flex-col gap-5 list-none text-lg font-bold">
         {Links.map((el, i) => (
-          <li className="border-b-1 border-gray-500 pb-3" key={i}>
+          <li
+            className="border-b-1 border-gray-500 pb-3 transition-all hover:text-primary"
+            key={i}
+          >
             <Link to={el.link}>{el.id}</Link>
           </li>
         ))}
