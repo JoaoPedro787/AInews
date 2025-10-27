@@ -1,7 +1,7 @@
 import { LuArrowRight } from "react-icons/lu";
-import NoticeCard from "../ui/notice-card";
+import StoryCard from "../ui/story-card";
 
-const TopNotice = () => {
+const TopStory = () => {
   return (
     <div className="flex flex-col flex-1 rounded-md shadow-md cursor-pointer bg-layout-primary hover:[&>figure>img]:scale-120 hover:[&>figure>img]:blur-[2px] ">
       <figure className="min-w-full overflow-hidden">
@@ -25,10 +25,10 @@ const TopNotice = () => {
   );
 };
 
-const NewsTemplate1 = () => {
+const StoriesTemplate1 = () => {
   return (
     <section className="flex gap-6 max-[1281px]:flex-col">
-      <TopNotice />
+      <TopStory />
       <div className="flex flex-col flex-1 gap-4 bg-layout-primary shadow-md rounded-md p-layout">
         <div className="flex justify-between items-center">
           <h2 className="text-3xl font-bold text-primary">The Latest</h2>
@@ -41,13 +41,13 @@ const NewsTemplate1 = () => {
         </div>
 
         <section className="flex flex-col justify-evenly gap-2 grow">
-          <NoticeCard />
-          <NoticeCard />
-          <NoticeCard />
+          <StoryCard />
+          <StoryCard />
+          <StoryCard />
         </section>
       </div>
     </section>
   );
 };
 
-export default NewsTemplate1;
+export default StoriesTemplate1;

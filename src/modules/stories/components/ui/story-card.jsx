@@ -1,4 +1,4 @@
-const NoticeCard = ({ size }) => {
+const StoryCard = ({ size }) => {
   return (
     <div className="flex gap-6 py-4 border-gray-300 cursor-pointer hover:[&>article>h2]:text-primary">
       <article className="flex flex-col gap-2 w-full justify-end">
@@ -8,7 +8,7 @@ const NoticeCard = ({ size }) => {
           happens next? - USA Today
         </h2>
         <h3>
-          6 hours ago. <span className="font-semibold">By John Koetsier</span>
+          6 hours ago • <span className="font-semibold">By John Koetsier</span>
         </h3>
       </article>
       <figure
@@ -25,4 +25,4 @@ const NoticeCard = ({ size }) => {
   );
 };
 
-export default NoticeCard;
+export default StoryCard;

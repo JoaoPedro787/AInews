@@ -1,13 +1,13 @@
-import NewsTemplate1 from "../../../modules/news/components/layouts/news-template-1";
-import NewsTemplate2 from "../../../modules/news/components/layouts/news-template-2";
-import NewsTemplate3 from "../../../modules/news/components/layouts/news-template-3";
+import StoriesTemplate1 from "../../../modules/stories/components/layouts/stories-template-1";
+import StoriesTemplate2 from "../../../modules/stories/components/layouts/stories-template-2";
+import StoriesTemplate3 from "../../../modules/stories/components/layouts/stories-template-3";
 
 const Index = () => (
   <>
     <div className="flex flex-col gap-20">
-      <NewsTemplate1 />
-      <NewsTemplate2 />
-      <NewsTemplate3 />
+      <StoriesTemplate1 />
+      <StoriesTemplate2 />
+      <StoriesTemplate3 />
     </div>
   </>
 );

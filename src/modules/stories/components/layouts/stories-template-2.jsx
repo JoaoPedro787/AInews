@@ -1,6 +1,6 @@
-import NoticeCard from "../ui/notice-card";
+import StoryCard from "../ui/story-card";
 
-const NewsTemplate2 = () => {
+const StoriesTemplate2 = () => {
   return (
     <section className="flex flex-col gap-4">
       <article className="flex flex-col gap-1">
@@ -9,19 +9,19 @@ const NewsTemplate2 = () => {
       </article>
       <div className="flex shadow-md rounded-md gap-6 p-layout bg-layout-primary max-[1281px]:flex-col">
         <section className="flex-1 flex flex-col gap-4">
-          <NoticeCard size={"small"} />
-          <NoticeCard size={"small"} />
-          <NoticeCard size={"small"} />
+          <StoryCard size={"small"} />
+          <StoryCard size={"small"} />
+          <StoryCard size={"small"} />
         </section>
         <span className="border-1 border-gray-500" />
         <section className="flex-1 flex flex-col gap-4">
-          <NoticeCard size={"small"} />
-          <NoticeCard size={"small"} />
-          <NoticeCard size={"small"} />
+          <StoryCard size={"small"} />
+          <StoryCard size={"small"} />
+          <StoryCard size={"small"} />
         </section>
       </div>
     </section>
   );
 };
 
-export default NewsTemplate2;
+export default StoriesTemplate2;
