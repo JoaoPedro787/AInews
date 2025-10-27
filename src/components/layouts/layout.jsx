@@ -26,7 +26,7 @@ const Layout = () => {
         {/* Container para o modal sobrepor */}
         <div className="relative flex flex-col grow">
           {/* Modal da header sobrepõe o Outlet e o Footer */}
-          <HeaderModal isOpen={isOpen} />
+          <HeaderModal isOpen={isOpen} closeModal={ModalFunc} />
 
           {/* Cresce independente do conteudo*/}
           <main className="px-layout py-10 grow [&>*]:max-w-[1280px] [&>*]:m-auto z-0 bg-layout-secondary">

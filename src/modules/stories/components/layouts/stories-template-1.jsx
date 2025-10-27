@@ -1,5 +1,5 @@
 import { LuArrowRight } from "react-icons/lu";
-import StoryCard from "../ui/story-card";
+import StoryCard from "../../../../components/ui/story-card";
 
 const TopStory = () => {
   return (

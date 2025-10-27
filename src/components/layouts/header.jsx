@@ -1,20 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import LogoUi from "./ui/logo";
 import SearchModal from "./search-modal";
+import { Links } from "../../data/header-links";
 
 // Icons
 import { FaSearch } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-
-const Links = [
-  { id: "News", link: "#" },
-  { id: "Technology", link: "#" },
-  { id: "U.S.", link: "#" },
-  { id: "World", link: "#" },
-  { id: "Games", link: "#" },
-  { id: "Music", link: "#" },
-];
 
 /*
   NavC and SearchC are gonna be hidden when they get to the width of 801px.
@@ -23,14 +15,25 @@ const Links = [
 */
 
 const NavC = () => {
+  const url = useLocation();
+
   return (
     <div className="flex items-center grow text-lg font-bold max-[801px]:hidden">
       <nav className="flex flex-1 list-none justify-evenly">
-        {Links.map((el, i) => (
-          <li key={i} className="transition-all hover:text-primary">
-            <Link to={el.link}>{el.id}</Link>
-          </li>
-        ))}
+        {Links.map((el, i) => {
+          return (
+            <li
+              key={i}
+              className={`transition-all hover:text-primary flex flex-col after:border-2 after:rounded-full after:border-primary ${
+                url.pathname == el.link || url.pathname + url.search == el.link
+                  ? ""
+                  : "after:hidden"
+              }`}
+            >
+              <Link to={el.link}>{el.id}</Link>
+            </li>
+          );
+        })}
       </nav>
     </div>
   );
@@ -74,7 +77,7 @@ const Header = ({ modalFunc }) => {
         </section>
       </header>
 
-      <SearchModal isOpen={isOpen} />
+      <SearchModal isOpen={isOpen} closeModal={ModalFunc} />
     </div>
   );
 };

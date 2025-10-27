@@ -1,4 +1,4 @@
-import StoryCard from "../ui/story-card";
+import StoryCard from "../../../../components/ui/story-card";
 
 const StoriesTemplate3 = () => {
   return (

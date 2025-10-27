@@ -1,4 +1,15 @@
-const SearchModal = ({ isOpen }) => {
+import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+
+const SearchModal = ({ isOpen, closeModal }) => {
+  const inputRef = useRef();
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    closeModal();
+    navigate(`/search?s=${inputRef.current.value}`);
+  };
+
   return (
     <div
       className={`p-layout left-0 right-0 absolute w-full -translate-y-full z-40 bg-layout-primary transition-all duration-100 max-[800px]:-translate-y-full ${
@@ -11,10 +22,15 @@ const SearchModal = ({ isOpen }) => {
         </h2>
         <div className="flex justify-between gap-4">
           <input
+            ref={inputRef}
+            onKeyDown={({ key }) => key == "Enter" && handleSearch()}
             placeholder="Search Stories"
             className="border-1 border-gray-500 rounded-md grow outline-0 p-3 text-xl"
           />
-          <button className="px-4 py-2 bg-white text-black font-bold text-xl rounded-md cursor-pointer">
+          <button
+            onClick={handleSearch}
+            className="px-4 py-2 bg-white text-black font-bold text-xl rounded-md cursor-pointer"
+          >
             Search
           </button>
         </div>
