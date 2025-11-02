@@ -1,6 +1,7 @@
 import StoriesCards from "../ui/stories-cards";
 import { useSearchParams } from "react-router-dom";
 import { Links } from "../../../../data/header-links";
+import { response } from "../../../../data/response-test";
 
 // ?s layout
 const SearchLayout = () => {
@@ -22,12 +23,12 @@ const SearchLayout = () => {
           <article className="flex flex-col gap-1">
             <h2 className="text-2xl font-semibold capitalize">{id}</h2>
             <h3 className="text-md text-semibold text-gray-300">
-              {obj ? "Recommended based on your interests" : "Search results"}
+              {obj ? "Latest news" : "Search results"}
             </h3>
           </article>
         </>
       </section>
-      <StoriesCards />
+      <StoriesCards data={response} />
     </>
   );
 };

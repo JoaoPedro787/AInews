@@ -1,12 +1,11 @@
 import StoryCard from "../../../../components/ui/story-card";
-const StoriesCards = () => {
+const StoriesCards = ({ data }) => {
+  const { articles } = data;
   return (
     <section className="flex flex-col gap-8 px-layout rounded-2xl bg-layout-primary shadow-md">
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
-      <StoryCard />
+      {articles.map((el, i) => (
+        <StoryCard size={"small"} data={el} key={i} />
+      ))}
     </section>
   );
 };
