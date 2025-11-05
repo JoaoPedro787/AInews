@@ -3,15 +3,23 @@ import { response } from "../../../../data/response-test";
 
 // Component
 const StoriesSection = ({ articles }) => (
-  <section className="flex-1 flex flex-col gap-4 items-stretch">
+  <section className="flex-1 flex gap-10 max-[1281px]:flex-col">
     {articles.map((el, i) => (
-      <StoryCard data={el} key={i} size={"small"} />
+      <div key={i} className="flex flex-1 items-end">
+        <StoryCard data={el} size={"small"} />
+      </div>
     ))}
   </section>
 );
 
 const StoriesTemplate2 = () => {
   const { articles } = response;
+  let slicedData = [];
+
+  // Slices the data to have a better ui
+  for (let i = 2; i <= 6; i += 2) {
+    slicedData.push(articles.slice(i - 2, i));
+  }
 
   return (
     <section className="flex flex-col gap-4">
@@ -19,10 +27,10 @@ const StoriesTemplate2 = () => {
         <h2 className="text-3xl font-semibold">For you</h2>
         <h3 className="font-semibold">Recommended based on your interests</h3>
       </article>
-      <div className="flex shadow-md rounded-md gap-6 p-layout bg-layout-primary max-[1281px]:flex-col">
-        <StoriesSection articles={articles.slice(0, 3)} />
-        <span className="border-1 border-gray-500" />
-        <StoriesSection articles={articles.slice(3, 6)} />
+      <div className="flex flex-col shadow-md rounded-md gap-6 p-layout bg-layout-primary ">
+        {slicedData.map((el, i) => (
+          <StoriesSection articles={el} key={i} />
+        ))}
       </div>
     </section>
   );

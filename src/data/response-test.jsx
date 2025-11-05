@@ -7,8 +7,7 @@ const response = {
         id: "the-wall-street-journal",
         name: "The Wall Street Journal",
       },
-      author:
-        "WSJ Staff, Gavin Bade, Jonathan Cheng, Patience Haggin, Stephen Wilmot, Nick Timiraos, Heard Editors",
+      author: "WSJ Staff",
       title:
         "Stock Market Today: Dow Futures Rise Ahead of Fed Rate Decision - The Wall Street Journal",
       description:
