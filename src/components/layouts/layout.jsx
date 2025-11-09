@@ -1,6 +1,7 @@
 import { useState } from "react";
-
 import { Outlet } from "react-router-dom";
+
+// Layouts
 import Header from "./header";
 import Footer from "./footer";
 import HeaderModal from "./header-modal";
@@ -29,7 +30,7 @@ const Layout = () => {
           <HeaderModal isOpen={isOpen} closeModal={ModalFunc} />
 
           {/* Cresce independente do conteudo*/}
-          <main className="px-layout py-10 grow [&>*]:max-w-[1280px] [&>*]:m-auto z-0 bg-layout-secondary">
+          <main className="px-layout py-10 grow [&>*]:max-w-max-layout [&>*]:m-auto z-0 bg-layout-secondary">
             {<Outlet />}
           </main>
 

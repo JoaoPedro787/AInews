@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import LogoUi from "./ui/logo";
+import LogoUi from "../ui/logo";
 
 const Links = [
   { id: "Privacy", link: "#" },
@@ -11,7 +11,7 @@ const Links = [
 const Footer = () => (
   <>
     <footer className="p-layout bg-layout-primary">
-      <div className="max-w-[1280px] m-auto w-full flex justify-between max-[601px]:flex-col max-[601px]:gap-12">
+      <div className="max-w-max-layout m-auto w-full flex justify-between max-[601px]:flex-col max-[601px]:gap-12">
         {<LogoUi size={"large"} />}
         <div className="flex flex-col gap-8 max-[601px]:border-t-1 max-[601px]:pt-8 min-[601px]:border-l-1 border-gray-500 min-[601px]:pl-8">
           <h3 className="text-sm">

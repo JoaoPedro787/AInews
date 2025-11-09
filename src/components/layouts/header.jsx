@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import LogoUi from "./ui/logo";
+
+// Components
+import LogoUi from "../ui/logo";
 import SearchModal from "./search-modal";
+
+// Data
 import { Links } from "../../data/header-links";
 
 // Icons
@@ -18,7 +22,7 @@ const NavC = () => {
   const url = useLocation();
 
   return (
-    <div className="flex items-center grow text-lg font-bold max-[801px]:hidden">
+    <div className="flex items-center grow text-md font-bold max-[801px]:hidden">
       <nav className="flex flex-1 list-none justify-evenly">
         {Links.map((el, i) => {
           return (
@@ -59,7 +63,7 @@ const Header = ({ modalFunc }) => {
     <div className="relative">
       {/* Main Container */}
       <header className="relative z-50 bg-layout-primary p-layout">
-        <section className="m-auto flex justify-between max-w-[1280px]">
+        <section className="m-auto flex justify-between max-w-max-layout">
           {/* Container for Logo */}
           {<LogoUi size={"slim"} />}
           {/* Container for Nav */}

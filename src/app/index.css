@@ -3,6 +3,8 @@
 
 @theme {
   --color-primary: #89b6de;
+  --breakpoint-layout: 1080px;
+  --spacing-max-layout: 1080px;
   --color-layout-primary: #1f1f1f;
   --color-layout-secondary: #292a2d;
   --color-layout-text: #fff;
