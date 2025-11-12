@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LuArrowRight } from "react-icons/lu";
 import StoryCard from "../../../../components/ui/story-card";
 
@@ -11,12 +11,10 @@ import { get } from "../../../../hooks/api";
 const TopStory = ({ data }) => {
   const authors = [...data.tags.map((el) => el.webTitle)].join(", ");
 
-  const navigate = useNavigate();
-
   return (
-    <button
+    <Link
+      to={`/story?id=${data.id}`}
       className="flex flex-col flex-1 text-start rounded-md shadow-md cursor-pointer bg-layout-primary hover:[&>figure>img]:scale-120 hover:[&>figure>img]:blur-[2px] "
-      onClick={() => navigate(`/story?id=${data.id}`)}
     >
       <figure className="min-w-full overflow-hidden">
         <img
@@ -34,21 +32,23 @@ const TopStory = ({ data }) => {
         <h3 className="text-lg">{data.fields.trailText}</h3>
         <h3 className="text-sm font-semibold">{authors}</h3>
       </article>
-    </button>
+    </Link>
   );
 };
 
 //SubComponents
 const RelevantStoriesCards = ({ response }) => (
-  <section className="flex flex-col justify-around gap-2 grow">
+  <section className="flex flex-col justify-around grow">
     {response.slice(1, 4).map((el, i) => (
-      <StoryCard key={i} data={el} />
+      <div key={i}>
+        <StoryCard data={el} />
+      </div>
     ))}
   </section>
 );
 
 const RelevantStories = ({ data }) => (
-  <div className="flex flex-col flex-1 gap-4 bg-layout-primary shadow-md rounded-md p-layout">
+  <div className="flex flex-col flex-1 gap-2 bg-layout-primary shadow-md rounded-md p-layout">
     <div className="flex justify-between items-center">
       <h2 className="text-xl font-bold text-primary">THE LATEST</h2>
       <span className="text-md flex gap-1 items-center cursor-pointer transition-all hover:text-primary hover:[&>figure]:translate-x-1">

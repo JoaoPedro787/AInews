@@ -1,22 +1,24 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const StoryCard = ({ size, data }) => {
   // Date to hours
   let published = new Date(data?.webPublicationDate);
   published = Math.round((new Date() - published) / (1000 * 60 * 60));
 
-  const navigate = useNavigate();
-
   return (
-    <button
+    <Link
+      to={`/story?id=${data.id}`}
       className="flex justify-between flex-1 gap-6 py-4 border-gray-300 cursor-pointer hover:[&>article>h2]:text-primary text-start"
-      onClick={() => navigate(`/story?id=${data.id}`)}
     >
       <article className="flex flex-col gap-2 w-full justify-end">
-        <h3 className="font-semibold text-sm uppercase">{data.sectionName}</h3>
-        <h2 className="text-lg transition-all">{data.webTitle}</h2>
+        <h3 className="font-semibold text-sm uppercase">
+          {data.sectionName || "NO CATEGORY"}
+        </h3>
+        <h2 className="text-lg transition-all">
+          {data.webTitle || "No title"}
+        </h2>
         <section className="flex gap-1 text-sm">
-          <h3>{published > 1 ? `${published} hour ago` : "Recently"}</h3>
+          <h3>{published > 1 ? `${published} hours ago` : "Recently"}</h3>
           <span>•</span>
           <h3 className="font-semibold">The Guardian</h3>
         </section>
@@ -29,14 +31,14 @@ const StoryCard = ({ size, data }) => {
         }`}
       >
         <img
-          className="w-full h-full"
+          className="w-full h-full object-cover"
           src={
             data?.fields.thumbnail ||
-            "https://www.webfx.com/wp-content/uploads/2023/07/what-is-openai.png"
+            "https://placehold.co/200x150?text=No+Image&font=inter"
           }
         />
       </figure>
-    </button>
+    </Link>
   );
 };
 

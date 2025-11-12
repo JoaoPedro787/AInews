@@ -13,7 +13,7 @@ const TopicSection = ({ data }) =>
       className="flex flex-col bg-layout-primary p-layout flex-1 rounded-md"
     >
       <h2 className="capitalize text-lg font-semibold">Topic</h2>
-      <ul className="flex flex-col justify-around h-full">
+      <ul className="flex flex-col justify-between h-full">
         <TopicElements articles={group} />
       </ul>
     </section>

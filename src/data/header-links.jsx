@@ -1,6 +1,11 @@
 const Links = [
   { id: "Home", link: "/" },
   {
+    id: "For-you",
+    link: "/search?s=for-you",
+    icon: "https://img.icons8.com/color/64/usa-circular.png",
+  },
+  {
     id: "Technology",
     link: "/search?s=technology",
     icon: "https://img.icons8.com/liquid-glass/64/decentralized-network.png",
