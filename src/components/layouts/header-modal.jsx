@@ -1,19 +1,20 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useRef } from "react";
 
+import { Link } from "react-router-dom";
+
 // Data
 import { Links } from "../../data/header-links";
 
 // Icons
 import { LuArrowRight } from "react-icons/lu";
 
-const HeaderModal = ({ isOpen, closeModal }) => {
+const HeaderModal = ({ isOpen }) => {
   const navigate = useNavigate();
-  const url = useLocation(); // <- nome alterado para 'url'
+  const url = useLocation();
 
   const handleNavigate = (link) => {
     navigate(link);
-    closeModal();
   };
 
   const inputRef = useRef();
@@ -31,11 +32,11 @@ const HeaderModal = ({ isOpen, closeModal }) => {
           ref={inputRef}
           onKeyDown={({ key }) =>
             key === "Enter" &&
-            handleNavigate(`/search?s=${inputRef.current.value}`)
+            handleNavigate(`/search?q=${inputRef.current.value}`)
           }
         />
         <button
-          onClick={() => handleNavigate(`/search?s=${inputRef.current.value}`)}
+          onClick={() => handleNavigate(`/search?q=${inputRef.current.value}`)}
           className="text-xl cursor-pointer transition-all hover:text-primary hover:translate-x-1"
         >
           <LuArrowRight />
@@ -52,12 +53,9 @@ const HeaderModal = ({ isOpen, closeModal }) => {
                 : "hover:text-primary"
             }`}
           >
-            <button
-              onClick={() => handleNavigate(el.link)}
-              className="w-full text-left cursor-pointer"
-            >
+            <Link to={el.link} className="w-full text-left cursor-pointer">
               {el.id}
-            </button>
+            </Link>
           </li>
         ))}
       </nav>

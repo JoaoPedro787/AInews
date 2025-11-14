@@ -81,7 +81,7 @@ const Header = ({ modalFunc }) => {
         </section>
       </header>
 
-      <SearchModal isOpen={isOpen} closeModal={ModalFunc} />
+      <SearchModal isOpen={isOpen} />
     </div>
   );
 };

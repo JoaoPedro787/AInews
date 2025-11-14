@@ -1,13 +1,13 @@
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const SearchModal = ({ isOpen, closeModal }) => {
+const SearchModal = ({ isOpen }) => {
   const inputRef = useRef();
+
   const navigate = useNavigate();
 
   const handleSearch = () => {
-    closeModal();
-    navigate(`/search?s=${inputRef.current.value}`);
+    navigate(`/search?q=${inputRef.current.value}`);
   };
 
   return (

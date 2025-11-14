@@ -8,6 +8,8 @@ const StoryCard = ({ size, data }) => {
   return (
     <Link
       to={`/story?id=${data.id}`}
+      target="_blank"
+      rel="noopener noreferrer"
       className="flex justify-between flex-1 gap-6 py-4 border-gray-300 cursor-pointer hover:[&>article>h2]:text-primary text-start"
     >
       <article className="flex flex-col gap-2 w-full justify-end">

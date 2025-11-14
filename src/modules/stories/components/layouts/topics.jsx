@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+
+// Components
 import StoryCard from "../../../../components/ui/story-card";
+import SkeletonC from "../../../../components/ui/skeleton-loading";
 
 // Services
 import guardianAPI from "../../../../services/guardian";
@@ -48,20 +51,26 @@ const Topics = () => {
   }, [response]);
 
   return (
-    !isLoading && (
-      <section className="flex flex-col gap-4">
-        <article className="flex flex-col gap-1">
-          <h2 className="text-2xl font-semibold">Your topics</h2>
-          <h3 className="font-semibold text-sm">
-            Recommended based on your interests
-          </h3>
-        </article>
+    <section
+      className={`flex gap-4 flex-col ${isLoading && "flex-row h-[600px]"}`}
+    >
+      {isLoading ? (
+        Array.from({ length: 3 }).map((_, i) => <SkeletonC key={i} />)
+      ) : (
+        <>
+          <article className="flex flex-col gap-1">
+            <h2 className="text-2xl font-semibold">Your topics</h2>
+            <h3 className="font-semibold text-sm">
+              Recommended based on your interests
+            </h3>
+          </article>
 
-        <div className="flex gap-4 max-layout:flex-col">
-          <TopicSection data={slicedData} />
-        </div>
-      </section>
-    )
+          <div className="flex gap-4 max-layout:flex-col">
+            <TopicSection data={slicedData} />
+          </div>
+        </>
+      )}
+    </section>
   );
 };
 

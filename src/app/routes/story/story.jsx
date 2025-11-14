@@ -1,4 +1,4 @@
-import StoryFull from "../../../modules/story/layouts/story-full-page";
+import StoryFull from "../../../modules/story/components/layouts/story-full-page";
 
 const Stories = () => {
   return <StoryFull />;

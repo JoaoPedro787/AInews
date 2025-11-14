@@ -1,34 +1,74 @@
+import { Gamepad2, Globe, Landmark, Lightbulb, Volleyball } from "lucide-react";
+
+// Template for icons
+const IconTemplate = ({ Icon, color, iconColor }) => (
+  <figure
+    className={`w-full h-full flex items-center justify-center rounded-full ${color}`}
+  >
+    <Icon size={36} className={iconColor} />
+  </figure>
+);
+
 const Links = [
   { id: "Home", link: "/" },
   {
-    id: "For-you",
-    link: "/search?s=for-you",
-    icon: "https://img.icons8.com/color/64/usa-circular.png",
+    id: "For you",
+    link: "/search?q=technology%20education%20sport",
   },
   {
     id: "Technology",
-    link: "/search?s=technology",
-    icon: "https://img.icons8.com/liquid-glass/64/decentralized-network.png",
+    link: "/search?section=technology",
+    icon: (
+      <IconTemplate
+        Icon={Lightbulb}
+        color={"bg-yellow-100"}
+        iconColor={"text-yellow-600"}
+      />
+    ),
   },
   {
     id: "U.S.",
-    link: "/search?s=u.s.",
-    icon: "https://img.icons8.com/color/64/usa-circular.png",
+    link: "/search?section=us-news",
+    icon: (
+      <IconTemplate
+        Icon={Landmark}
+        color={"bg-blue-100"}
+        iconColor={"text-blue-600"}
+      />
+    ),
   },
   {
     id: "World",
-    link: "/search?s=world",
-    icon: "https://img.icons8.com/liquid-glass/64/earth-planet.png",
+    link: "/search?section=world",
+    icon: (
+      <IconTemplate
+        Icon={Globe}
+        color={"bg-emerald-100"}
+        iconColor={"text-emerald-600"}
+      />
+    ),
   },
   {
     id: "Games",
-    link: "/search?s=games",
-    icon: "https://img.icons8.com/liquid-glass/64/controller.png",
+    link: "/search?section=games",
+    icon: (
+      <IconTemplate
+        Icon={Gamepad2}
+        color={"bg-purple-100"}
+        iconColor={"text-purple-600"}
+      />
+    ),
   },
   {
     id: "Sports",
-    link: "/search?s=sports",
-    icon: "https://img.icons8.com/liquid-glass/64/cycling-road.png",
+    link: "/search?section=sport",
+    icon: (
+      <IconTemplate
+        Icon={Volleyball}
+        color={"bg-orange-100"}
+        iconColor={"text-orange-600"}
+      />
+    ),
   },
 ];
 
