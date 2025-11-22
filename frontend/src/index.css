@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #89b6de;
+  --breakpoint-layout: 1080px;
+  --spacing-max-layout: 1080px;
+  --breakpoint-default: 800px;
+  --color-layout-primary: #1f1f1f;
+  --color-layout-secondary: #292a2d;
+  --color-layout-text: #fff;
+  --spacing-layout: 16px;
+  --animate-typing: typing 2s steps(20) infinite alternate, blink 0.7s infinite;
+
+  @keyframes typing {
+    0% {
+      width: 0%;
+      visibility: hidden;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+    100% {
+      border-color: white;
+    }
+  }
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  color: var(--color-layout-text);
+}
