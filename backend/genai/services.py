@@ -1,7 +1,7 @@
 from google import genai
 from google.genai import types
 from config import Settings
-from .constants import summaryInstruction, recommendationInstruction
+from .constants import summaryInstruction, recommendationInstruction, aiModel
 from .utils import validate_recommended_sections
 import json
 
@@ -12,7 +12,7 @@ client = genai.Client(api_key=settings.GOOGLE_AI_KEY)
 class GenAIService:
     async def post_summary(req):
         response = client.models.generate_content(
-            model=constants.aiModel,
+            model=aiModel,
             contents=req.body,
             config=types.GenerateContentConfig(system_instruction=summaryInstruction),
         )
@@ -23,7 +23,7 @@ class GenAIService:
         modeledReq = json.dumps([obj.model_dump() for obj in req.storage])
 
         response = client.models.generate_content(
-            model=constants.aiModel,
+            model=aiModel,
             contents=modeledReq,
             config=types.GenerateContentConfig(
                 system_instruction=recommendationInstruction
